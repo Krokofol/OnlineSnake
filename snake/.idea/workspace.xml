@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4ff132c-fc02-4b54-a122-36157c961cab" name="Default Changelist" comment="" />
+    <list default="true" id="a4ff132c-fc02-4b54-a122-36157c961cab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snake/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snake/Game/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snake/META-INF/snake.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snake/onlineThread/OnlineThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snake/onlineThread/OnlineThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onlineThread/OnlineThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlineThread/OnlineThread.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +22,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1jv1PxcjXMWQ54ve6y0eY83WchD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,11 +34,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Application.GameConnect 2">
+  <component name="RunManager" selected="Application.GameStart">
     <configuration name="GameConnect 1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Game.Game" />
       <module name="snake" />
@@ -74,6 +88,8 @@
       <option name="presentableId" value="Default" />
       <updated>1604669730370</updated>
       <workItem from="1604669734245" duration="31144000" />
+      <workItem from="1604844334010" duration="1454000" />
+      <workItem from="1604846029381" duration="240000" />
     </task>
     <servers />
   </component>
@@ -101,22 +117,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604670014847" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1604822340187">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1604846339049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604822340187" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1604822340187">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604846339049" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1604846339048">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604822340187" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1604822340187">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604846339048" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1604846339048">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604822340187" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1604822340187">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604846339048" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1604846339049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604822340187" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604846339049" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1604822340175">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -133,6 +149,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604822340175" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1604846035157">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604846035157" />
     <state x="690" y="286" key="extract.method.dialog" timestamp="1604778195109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -151,52 +171,37 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/onlineThread/OnlineThread.java</url>
-          <line>96</line>
+          <line>90</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/onlineThread/OnlineThread.java</url>
-          <line>77</line>
+          <line>71</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/onlineThread/OnlineThread.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/onlineThread/OnlineThread.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/onlineThread/OnlineThread.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/onlineThread/OnlineThread.java</url>
-          <line>59</line>
+          <line>53</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/onlineThread/OnlineThread.java</url>
-          <line>65</line>
+          <line>59</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/onlineThread/OnlineThread.java</url>
-          <line>131</line>
+          <line>125</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/onlineThread/OnlineThread.java</url>
-          <line>69</line>
+          <line>63</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/onlineThread/OnlineThread.java</url>
-          <line>135</line>
+          <line>129</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>

@@ -39,15 +39,9 @@ public class OnlineThread implements Runnable {
         Game.mySnake = new Snake();
         Game.mySnake.coordinates = new ArrayList<>();
         int countCoordinates = dataInputStreams.get(0).readInt();
-        System.out.println("I GOT " + countCoordinates + " COORDINATES OF MY SNAKE");
-        if (countCoordinates == 256) {
-            countCoordinates = dataInputStreams.get(0).readInt();
-            System.out.println("I GOT " + countCoordinates + " COORDINATES OF MY SNAKE AGAIN");
-        }
         for (int j = 0; j < countCoordinates; j++)
             Game.mySnake.coordinates.add(new Coordinates(dataInputStreams.get(0).readInt(), dataInputStreams.get(0).readInt()));
         int countSnakes = dataInputStreams.get(0).readInt();
-        System.out.println("I GOT " + countSnakes + " SNAKES");
         snakes = new ArrayList<>();
         for (int i = 0; i < countSnakes; i++) {
             snakes.add(new Snake());
@@ -116,7 +110,7 @@ public class OnlineThread implements Runnable {
     public static void sendData(int id) throws IOException {
         sendSnake(id, snakes.get(id));
         dataOutputStreams.get(id).writeInt(snakes.size());
-        System.out.println("I SEND " + snakes.size() + " SNAKES COUNT");
+        //System.out.println("I SEND " + snakes.size() + " SNAKES COUNT");
         for (int i = 0; i < snakes.size(); i++) {
             if (i == id) continue;
             sendSnake(id, snakes.get(i));
@@ -138,7 +132,7 @@ public class OnlineThread implements Runnable {
 
     private static void sendSnake(int id, Snake snake) throws IOException {
         dataOutputStreams.get(id).writeInt(snake.coordinates.size());
-        System.out.println("COORDINATES : " + snake.coordinates.size());
+        //System.out.println("COORDINATES : " + snake.coordinates.size());
         for (int j = 0; j < snake.coordinates.size(); j++){
             dataOutputStreams.get(id).writeInt(snake.coordinates.get(j).x);
             dataOutputStreams.get(id).writeInt(snake.coordinates.get(j).y);
@@ -156,13 +150,13 @@ public class OnlineThread implements Runnable {
             System.out.println("ERROR : CREATING STREAMS");
             System.exit(0);
         }
-        try {
-            sendData(sockets.size()-1);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("ERROR : SENDING START INFO");
-            System.exit(0);
-        }
+//        try {
+//            sendData(sockets.size()-1);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            System.out.println("ERROR : SENDING START INFO");
+//            System.exit(0);
+//        }
     }
 
     public static void sendServerExit(int i) {

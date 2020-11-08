@@ -45,12 +45,16 @@ public class Game {
     }
 
     private static void runClient() {
+        int timeStart = 0;
+        int timeEnd = 0;
         do {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            if (timeEnd - timeStart < 100)
+                try {
+                    Thread.sleep(100 - (timeEnd - timeStart));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            timeStart = (int) System.currentTimeMillis();
             try {
                 OnlineThread.receiveData();
             } catch (IOException e) {
@@ -60,17 +64,23 @@ public class Game {
             }
             if (OnlineThread.becomeHost) break;
             myFrame.draw();
+            timeEnd = (int) System.currentTimeMillis();
         } while (!OnlineThread.becomeHost);
         runServer();
     };
 
     public static void runServer() {
+        int timeStart = 0;
+        int timeEnd = 0;
         while(true) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            if (timeEnd - timeStart < 100)
+                try {
+                    Thread.sleep(100 - (timeEnd - timeStart));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            timeStart = (int) System.currentTimeMillis();
+
             if(mySnake.move()) mySnake = new Snake();
             for (int i = 0; i < OnlineThread.snakes.size(); i++)
                 if (OnlineThread.snakes.get(i).move()) OnlineThread.snakes.set(i, new Snake());
@@ -87,6 +97,8 @@ public class Game {
                 }
             if (OnlineThread.exit) OnlineThread.close();
             myFrame.draw();
+
+            timeEnd = (int) System.currentTimeMillis();
         }
     }
 
