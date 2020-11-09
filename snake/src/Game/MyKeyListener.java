@@ -29,16 +29,14 @@ public class MyKeyListener implements KeyListener {
                 OnlineThread.exit = true; break;
             case ('o') :
             case ('щ') :
-                if (!OnlineThread.observe) {
-                    OnlineThread.observe = true;
-                    OnlineThread.zombie.add(Game.mySnake);
-                    Game.mySnake = null;
-                }
+                //if (!OnlineThread.observe) {
+                OnlineThread.becomeObserver = true;
+                //}
                 break;
             case ('p') :
             case ('з') :
-                OnlineThread.observe = false;
-                Game.mySnake = new Snake();
+                OnlineThread.becomeObserver = false;
+                //Game.mySnake = new Snake();
                 break;
         }
     }

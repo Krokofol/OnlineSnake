@@ -119,7 +119,19 @@ public class Game {
             }
             if (OnlineThread.exit) OnlineThread.close();
             myFrame.draw();
-
+            if (OnlineThread.becomeObserver) {
+                if (!OnlineThread.observe) {
+                    OnlineThread.observe = true;
+                    OnlineThread.zombie.add(mySnake);
+                    mySnake = new Snake();
+                }
+            }
+            else {
+                if (OnlineThread.observe) {
+                    OnlineThread.observe = false;
+                    mySnake = new Snake();
+                }
+            }
             timeEnd = (int) System.currentTimeMillis();
         }
     }

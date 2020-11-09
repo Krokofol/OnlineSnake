@@ -15,6 +15,7 @@ public class OnlineThread implements Runnable {
     public static ArrayList<Snake> snakes = new ArrayList<>();
     public static ArrayList<Snake> zombie = new ArrayList<Snake>();
 
+    public static boolean becomeObserver = false;
     public static boolean observe = false;
     public static boolean exit = false;
     public static boolean becomeHost = false;
@@ -41,6 +42,20 @@ public class OnlineThread implements Runnable {
     }
 
     public static void receiveData() throws IOException {
+        if (OnlineThread.becomeObserver) {
+            if (!OnlineThread.observe) {
+                OnlineThread.observe = true;
+                OnlineThread.zombie.add(Game.mySnake);
+                Game.mySnake = new Snake();
+            }
+        }
+        else {
+            if (OnlineThread.observe) {
+                OnlineThread.observe = false;
+                Game.mySnake = new Snake();
+            }
+        }
+
         dataOutputStreams.get(0).writeBoolean(exit);
         if (exit) System.exit(0);
         dataOutputStreams.get(0).writeBoolean(observe);
