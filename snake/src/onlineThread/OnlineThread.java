@@ -101,13 +101,15 @@ public class OnlineThread implements Runnable {
                 sockets.remove(0);
 
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(120);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 sockets.add(new Socket(ip, port));
+                System.out.println("RECONECTED");
                 dataOutputStreams.add(new DataOutputStream(sockets.get(0).getOutputStream()));
                 dataInputStreams.add(new DataInputStream(sockets.get(0).getInputStream()));
+                dataOutputStreams.get(0).writeBoolean(observe);
             }
             else {
                 boolean isServerObservs = dataInputStreams.get(0).readBoolean();
@@ -126,7 +128,7 @@ public class OnlineThread implements Runnable {
                     snakes.remove(snakes.size() - 1);
                 }
                 try {
-                    Thread.sleep(120);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -412,6 +414,7 @@ public class OnlineThread implements Runnable {
             try {
                 if(!exit) sockets.add(serverSocket.accept());
                 addUser();
+                System.out.println("USER IS ADDED");
             } catch (IOException e) {
                 e.printStackTrace();
             }
