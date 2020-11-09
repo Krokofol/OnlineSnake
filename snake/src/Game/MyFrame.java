@@ -32,13 +32,15 @@ public class MyFrame extends JFrame {
     }
 
     private void drawSnake(Graphics g1) {
-        for(int i = 0; i < Game.mySnake.coordinates.size(); i++) {
-            int x = Game.mySnake.coordinates.get(i).x * 20;
-            int y = Game.mySnake.coordinates.get(i).y * 20 + 20;
-            g1.setColor(new Color(0,80,0));
-            g1.fillRect(x, y, 20, 20);
-            g1.setColor(new Color(0,200,50));
-            g1.fillRect(x + 1, y + 1, 18, 18);
+        if (!OnlineThread.observe) {
+            for (int i = 0; i < Game.mySnake.coordinates.size(); i++) {
+                int x = Game.mySnake.coordinates.get(i).x * 20;
+                int y = Game.mySnake.coordinates.get(i).y * 20 + 20;
+                g1.setColor(new Color(0, 80, 0));
+                g1.fillRect(x, y, 20, 20);
+                g1.setColor(new Color(0, 200, 50));
+                g1.fillRect(x + 1, y + 1, 18, 18);
+            }
         }
         for (int j = 0; j < OnlineThread.snakes.size(); j++) {
             for (int i = 0; i < OnlineThread.snakes.get(j).coordinates.size(); i++) {
@@ -48,6 +50,17 @@ public class MyFrame extends JFrame {
                 g1.fillRect(x, y, 20, 20);
                 g1.setColor(new Color(0,50,200));
                 g1.fillRect(x + 1, y + 1, 18, 18);
+            }
+        }
+        for (int i = 0; i < OnlineThread.zombie.size(); i++) {
+            for (int j = 0; j < OnlineThread.zombie.get(i).coordinates.size(); j++) {
+                int x = OnlineThread.zombie.get(i).coordinates.get(j).x * 20;
+                int y = OnlineThread.zombie.get(i).coordinates.get(j).y * 20 + 20;
+                g1.setColor(new Color(40,40,40));
+                g1.fillRect(x, y, 20, 20);
+                g1.setColor(new Color(120,120,120));
+                g1.fillRect(x + 1, y + 1, 18, 18);
+
             }
         }
     }

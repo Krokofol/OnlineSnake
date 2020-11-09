@@ -25,8 +25,21 @@ public class MyKeyListener implements KeyListener {
             case('ф') :
                 Game.mySnake.setSpeed(3); break;
             case('q') :
-            case('й'):
-                OnlineThread.exit = true;
+            case('й') :
+                OnlineThread.exit = true; break;
+            case ('o') :
+            case ('щ') :
+                if (!OnlineThread.observe) {
+                    OnlineThread.observe = true;
+                    OnlineThread.zombie.add(Game.mySnake);
+                    Game.mySnake = null;
+                }
+                break;
+            case ('p') :
+            case ('з') :
+                OnlineThread.observe = false;
+                Game.mySnake = new Snake();
+                break;
         }
     }
 
