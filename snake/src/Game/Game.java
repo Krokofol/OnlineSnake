@@ -1,12 +1,15 @@
 package Game;
 
 import onlineThread.OnlineThread;
+import onlineThread.Finder;
+import onlineThread.Sender;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Game {
     public static boolean decIObservers = false;
@@ -81,9 +84,10 @@ public class Game {
             if (!OnlineThread.observe)
                 if (mySnake.move()) mySnake = new Snake();
             for (int i = 0; i < OnlineThread.snakes.size(); i++)
-                if (OnlineThread.snakes.get(i).move()) OnlineThread.snakes.set(i, new Snake());
+                if (OnlineThread.snakes.get(i).moveSnakes(i))
+                    OnlineThread.snakes.set(i, new Snake());
             for (int i = 0; i < OnlineThread.zombie.size(); i++)
-                if (OnlineThread.zombie.get(i).move()) {
+                if (OnlineThread.zombie.get(i).moveZombie(i)) {
                     OnlineThread.zombie.remove(i);
                     i--;
                 }
@@ -137,7 +141,22 @@ public class Game {
     }
 
     public static void main(String[] args) {
+
+        System.out.print("Enter port : ");
+        Scanner in = new Scanner(System.in);
+        int port = in.nextInt();
+        Finder.port_ = port;
+
+        if (Finder.standartInitialization()) {
+            System.out.println(Finder.errorCode);
+            System.exit(1);
+        }
+        Finder finder = new Finder();
+        finder.run();
+        new Thread (new Sender()).start();
+
         OnlineThread.observe = Boolean.parseBoolean(args[args.length - 1]);
+        OnlineThread.becomeObserver = OnlineThread.observe;
         if(args.length == 2) startNewGame(args);
         if(args.length == 3) {
             connectToGame(args);

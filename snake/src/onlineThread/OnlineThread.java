@@ -75,12 +75,10 @@ public class OnlineThread implements Runnable {
                 Game.mySnake.coordinates.add(new Coordinates(dataInputStreams.get(0).readInt(), dataInputStreams.get(0).readInt()));
         }
         int countSnakes = dataInputStreams.get(0).readInt();
-        System.out.println("I GOT " + countSnakes + "SNAKES");
         snakes = new ArrayList<>();
         readSnakes(countSnakes, snakes);
 
         int countZombie = dataInputStreams.get(0).readInt();
-        System.out.println("I GOT " + countZombie + "ZOMBIE");
         zombie = new ArrayList<Snake>();
         readSnakes(countZombie, zombie);
 

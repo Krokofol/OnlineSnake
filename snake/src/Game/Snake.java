@@ -28,16 +28,83 @@ public class Snake {
         }
     }
 
-    public boolean move() {
+    public boolean moveSnakes(int id) {
+        if (moveHead()) return true;
+        for (int i = 0; i < OnlineThread.snakes.size(); i++) {
+            if (i == id) {
+                if (compareSnakes(OnlineThread.snakes.get(i), 1))
+                    return true;
+            }
+            else
+            if (compareSnakes(OnlineThread.snakes.get(i), 0))
+                return true;
+        }
+        for (int i = 0; i < OnlineThread.zombie.size(); i++) {
+            if (compareSnakes(OnlineThread.zombie.get(i), 0))
+                return true;
+        }
+        return false;
+    }
+
+    private boolean moveHead() {
         coordinates.add(new Coordinates(coordinates.get(coordinates.size() - 1).x + speed.x, coordinates.get(coordinates.size() - 1).y + speed.y));
 
+        eatFood();
+
+        if (!OnlineThread.observe) {
+            return compareSnakes(Game.mySnake, 0);
+        }
+        return false;
+    }
+
+    public boolean moveZombie(int id) {
+        if (moveHead()) return true;
+        for (int i = 0; i < OnlineThread.snakes.size(); i++) {
+            if (compareSnakes(OnlineThread.snakes.get(i), 0)) return true;
+        }
+        for (int i = 0; i < OnlineThread.zombie.size(); i++) {
+            if (i == id) {
+                if (compareSnakes(OnlineThread.zombie.get(i), 1)) return true;
+            }
+            else
+                if (compareSnakes(OnlineThread.zombie.get(i), 0)) return true;
+        }
+
+        return false;
+    }
+
+    private void eatFood() {
         for (int i = 0; i < Game.food.size(); i++)
             if ((Game.food.get(i).x.equals(coordinates.get(coordinates.size() - 1).x)) && (Game.food.get(i).y.equals(coordinates.get(coordinates.size() - 1).y))) {
                 Game.food.remove(i);
                 Game.food.add(new Coordinates());
-                return false;
+                return;
             }
         coordinates.remove(0);
+    }
+
+    public boolean compareSnakes(Snake a, int iLast) {
+        for (int i = 0; i < a.coordinates.size() - iLast; i++) {
+            if (a.coordinates.get(i).equals(coordinates.get(coordinates.size() - 1))) return true;
+        }
+        return false;
+    }
+
+    public boolean move() {
+        coordinates.add(new Coordinates(coordinates.get(coordinates.size() - 1).x + speed.x, coordinates.get(coordinates.size() - 1).y + speed.y));
+
+        eatFood();
+
+        for (int i = 0; i < coordinates.size() - 1; i++) {
+            if (coordinates.get(i).equals(coordinates.get(coordinates.size() - 1))) return true;
+        }
+        for (int i = 0; i < OnlineThread.snakes.size(); i++) {
+            if (compareSnakes(OnlineThread.snakes.get(i), 0)) return true;
+        }
+        for (int i = 0; i < OnlineThread.zombie.size(); i++) {
+            if (compareSnakes(OnlineThread.zombie.get(i), 0)) return true;
+        }
+
         return false;
     }
 
