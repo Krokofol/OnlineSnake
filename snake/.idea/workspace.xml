@@ -7,18 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4ff132c-fc02-4b54-a122-36157c961cab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/onlineThread/Finder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/onlineThread/Sender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snake/Game/Coordinates.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snake/Game/Coordinates.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snake/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snake/Game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snake/Game/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snake/Game/Snake.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snake/onlineThread/OnlineThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snake/onlineThread/OnlineThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Snake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/onlineThread/OnlineThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlineThread/OnlineThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onlineThread/Finder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlineThread/Finder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,13 +38,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../lab1-locating-copies-of-yourself-on-the-local-network-Krokofol/Lab1-FindCopy" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.GameStart">
+  <component name="RunManager" selected="Application.GameConnect 1">
     <configuration name="GameConnect 1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Game.Game" />
       <module name="snake" />
@@ -115,6 +105,7 @@
       <workItem from="1604846029381" duration="240000" />
       <workItem from="1604846508628" duration="11067000" />
       <workItem from="1604934932091" duration="23535000" />
+      <workItem from="1605017170450" duration="1243000" />
     </task>
     <servers />
   </component>
@@ -146,26 +137,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="421" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1604818802925" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1604670014847">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1605018287187">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604670014847" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1605017022448">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605018287187" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1605018504702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605017022448" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1605017022448">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605018504702" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1605018504701">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605017022448" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1605017022448">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605018504701" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1605018504701">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605017022448" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1605017022448">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605018504701" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1605018504702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605017022448" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605018504702" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1605017022370">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -186,10 +177,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604943444691" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1604934931583">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1605017388596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604934931583" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605017388596" />
     <state x="690" y="286" key="extract.method.dialog" timestamp="1605002142079">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

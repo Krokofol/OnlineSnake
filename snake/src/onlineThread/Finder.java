@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class Finder implements Runnable{
     static public String errorCode;
+    static boolean iFindSmth = false;
 
     static public int cooldownSend;
     static public int totalCooldownSend;
@@ -59,16 +60,16 @@ public class Finder implements Runnable{
             if (Finder.cooldownSend <= 0)
                 if (send(Finder.message)) return;
         }
-        boolean iFindSmth = false;
         for (Map.Entry<String, Long> entry : copies.entrySet()) {
-            try {
-                if (!("LAP" + entry.getKey()).equals(InetAddress.getLocalHost().toString() + ":" + port_)) {
+//            try {
+//                if (!(entry.getKey()).equals("/" + InetAddress.getLocalHost().getHostAddress()))
+//                {
                     System.out.println(entry.getKey());
                     iFindSmth = true;
-                }
-            } catch (UnknownHostException e) {
-                e.printStackTrace();
-            }
+//                }
+//            } catch (UnknownHostException e) {
+//                e.printStackTrace();
+//            }
         }
         if (!iFindSmth) System.out.println("NO GAMES");
     }
@@ -76,13 +77,13 @@ public class Finder implements Runnable{
     static private boolean send(String message) {
         byte[] messByte = message.getBytes();
         DatagramPacket sendPacket = new DatagramPacket(messByte, messByte.length, multicastAddress);
-        try {
-            socketAddress.send(sendPacket);
-        } catch (IOException e) {
-            e.printStackTrace();
-            Finder.errorCode = "Send error";
-            return true;
-        }
+//        try {
+//            socketAddress.send(sendPacket);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            Finder.errorCode = "Send error";
+//            return true;
+//        }
         Finder.cooldownSend = Finder.totalCooldownSend;
         return false;
     }
@@ -95,7 +96,7 @@ public class Finder implements Runnable{
         } catch (IOException e) {
             return null;
         }
-        return recvPacket.getSocketAddress().toString();
+        return recvPacket.getAddress().toString();
     }
 
     static private void updateTime(long time) {
