@@ -19,8 +19,8 @@ public class Game {
     public static Snake mySnake;
     public static ArrayList<Coordinates> food = new ArrayList<Coordinates>();
 
-    public static void startNewGame(String[] args) {
-        OnlineThread.preloadServer(Integer.parseInt(args[0]));
+    public static void startNewGame(int port, String observe) {
+        OnlineThread.preloadServer(port);
         myFrame = new MyFrame(20, 20);
         mySnake = new Snake();
         for (int i = 0; i < 5; i++)
@@ -28,11 +28,11 @@ public class Game {
         runServer();
     }
 
-    public static void connectToGame(String[] args) {
+    public static void connectToGame(String ip, int port) {
         myFrame = new MyFrame(20, 20);
         mySnake = new Snake();
         try {
-            OnlineThread.sockets.add(new Socket(args[0], Integer.parseInt(args[1])));
+            OnlineThread.sockets.add(new Socket(ip, port));
             OnlineThread.dataInputStreams.add(new DataInputStream(OnlineThread.sockets.get(0).getInputStream()));
             OnlineThread.dataOutputStreams.add(new DataOutputStream(OnlineThread.sockets.get(0).getOutputStream()));
             OnlineThread.dataOutputStreams.get(0).writeBoolean(OnlineThread.observe);
@@ -155,13 +155,41 @@ public class Game {
         finder.run();
         new Thread (new Sender()).start();
 
-        OnlineThread.observe = Boolean.parseBoolean(args[args.length - 1]);
-        OnlineThread.becomeObserver = OnlineThread.observe;
-        if(args.length == 2) startNewGame(args);
-        if(args.length == 3) {
-            connectToGame(args);
-            runClient();
+        String ip = "0";
+
+        if (!Finder.iFindSmth) {
+            System.out.println("Enter observe or play");
+            ip = in.next();
+            OnlineThread.observe = "observe".equals(ip);
+            OnlineThread.becomeObserver = OnlineThread.observe;
+            startNewGame(port, ip);
         }
+        else {
+            System.out.println("Enter ip to connect or 0 to create a game");
+            ip = in.next();
+            if ("0".equals(ip)) {
+                System.out.println("Enter observe or play");
+                ip = in.next();
+                OnlineThread.observe = "observe".equals(ip);
+                OnlineThread.becomeObserver = OnlineThread.observe;
+                startNewGame(port, ip);
+            }
+            else {
+                System.out.println("Enter observe or play");
+                String observe = in.next();
+                OnlineThread.observe = "observe".equals(observe);
+                OnlineThread.becomeObserver = OnlineThread.observe;
+                connectToGame(ip, port);
+                runClient();
+            }
+        }
+//        OnlineThread.observe = Boolean.parseBoolean(args[args.length - 1]);
+//        OnlineThread.becomeObserver = OnlineThread.observe;
+//        if(args.length == 2) startNewGame(args);
+//        if(args.length == 3) {
+//            connectToGame(args);
+//            runClient();
+//        }
     }
 
 }

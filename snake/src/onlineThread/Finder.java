@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class Finder implements Runnable{
     static public String errorCode;
-    static boolean iFindSmth = false;
+    static public boolean iFindSmth = false;
 
     static public int cooldownSend;
     static public int totalCooldownSend;
@@ -116,7 +116,7 @@ public class Finder implements Runnable{
         NetworkInterface networkInterface = null;
         try {
             networkInterface = NetworkInterface.getByInetAddress(InetAddress.getLocalHost());
-            //System.out.println(InetAddress.getLocalHost().toString());
+            System.out.println(InetAddress.getLocalHost().toString());
         } catch (SocketException e) {
             e.printStackTrace();
             Finder.errorCode = "Error in connecting to address";
