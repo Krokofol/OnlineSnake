@@ -13,6 +13,16 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class Sender implements Runnable {
     public static int counter = 0;
     public static ConcurrentLinkedQueue<Packet> packets = new ConcurrentLinkedQueue<>();
+    private static MulticastSocket multicastSocket;
+    static {
+        try {
+            multicastSocket = new MulticastSocket(8079);
+            NetworkInterface IFC = NetworkInterface.getByInetAddress(InetAddress.getLocalHost());
+            multicastSocket.joinGroup(new InetSocketAddress("224.0.0.0", 8079), IFC);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void addMessage(GeneratedMessageV3 message, int type) {
         SnakesProto.GameMessage.Builder builder = SnakesProto.GameMessage.newBuilder();
@@ -35,8 +45,8 @@ public class Sender implements Runnable {
                 builder.setMsgSeq(counter++);
                 byte[] data = builder.build().toByteArray();
                 try {
-                    DatagramPacket datagramPacket = new DatagramPacket(data, data.length, new InetSocketAddress("224.0.0.1", 8079));
-                    new MulticastSocket(8079).send(datagramPacket);
+                    DatagramPacket datagramPacket = new DatagramPacket(data, data.length, new InetSocketAddress("224.0.0.0", 8079));
+                    multicastSocket.send(datagramPacket);
                     System.out.print(".");
                 } catch (IOException e) {
                     e.printStackTrace();

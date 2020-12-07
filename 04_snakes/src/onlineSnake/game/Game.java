@@ -18,7 +18,7 @@ public class Game {
         Writer.Initialization();
         new Thread(new Sender()).start();
         new Thread(new PingerHost()).start();
-        new Thread(new Receiver()).start();
+        Receiver.run();
     }
 
 }
