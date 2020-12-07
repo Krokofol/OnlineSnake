@@ -16,9 +16,9 @@ public class Game {
 
     public static void main(String[] args) throws IOException {
         Writer.Initialization();
+        Receiver.run();
         new Thread(new Sender()).start();
         new Thread(new PingerHost()).start();
-        Receiver.run();
     }
 
 }

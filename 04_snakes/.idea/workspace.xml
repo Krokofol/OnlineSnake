@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dfd6e54-b091-45a1-a1bc-93d3c94f832b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/04_snakes/META-INF/04_snakes.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/04_snakes/onlineSnake/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/04_snakes/onlineSnake/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/04_snakes/onlineSnake/game/online/PingerHost.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/04_snakes/onlineSnake/game/online/PingerHost.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/04_snakes/onlineSnake/game/online/Receiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/04_snakes/onlineSnake/game/online/Receiver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/04_snakes/onlineSnake/game/online/Sender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/04_snakes/onlineSnake/game/online/Sender.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/onlineSnake/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlineSnake/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/onlineSnake/game/online/PingerHost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlineSnake/game/online/PingerHost.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/onlineSnake/game/online/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlineSnake/game/online/Receiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/onlineSnake/game/online/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlineSnake/game/online/Sender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +82,7 @@
       <workItem from="1607271247007" duration="11276000" />
       <workItem from="1607318405055" duration="35172000" />
       <workItem from="1607357489588" duration="230000" />
-      <workItem from="1607357742710" duration="1289000" />
+      <workItem from="1607357742710" duration="2556000" />
     </task>
     <servers />
   </component>
@@ -124,22 +118,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607358328903" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1607359124915">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1607359603115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607359124915" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1607359124915">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607359603115" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1607359603115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607359124915" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1607359124915">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607359603115" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1607359603115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607359124915" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1607359124915">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607359603115" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1607359603115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607359124915" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607359603115" />
     <state width="1876" height="348" key="GridCell.Tab.1.bottom" timestamp="1607353288941">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
