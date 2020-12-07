@@ -36,7 +36,7 @@ public class MyFrame extends JFrame {
             for (int i = 0; i < Game.mySnake.coordinates.size(); i++) {
                 int x = Game.mySnake.coordinates.get(i).x * 20;
                 int y = Game.mySnake.coordinates.get(i).y * 20 + 20;
-                g1.setColor(new Color(0, 80, 0));
+                g1.setColor(new Color(0, 80, 20));
                 g1.fillRect(x, y, 20, 20);
                 g1.setColor(new Color(0, 200, 50));
                 g1.fillRect(x + 1, y + 1, 18, 18);
@@ -66,7 +66,7 @@ public class MyFrame extends JFrame {
     }
 
     private void drawFood(Graphics g1) {
-        g1.setColor(new Color(255,150,0));
+        g1.setColor(new Color(200,140,0));
         for(int i = 0; i < Game.food.size(); i++) {
             int x = Game.food.get(i).x * 20;
             int y = Game.food.get(i).y * 20 + 20;

@@ -1,0 +1,6 @@
+10x - Field Errors
+
+
+Field errors :
+101 - Field size is not initialized (null)
+102 - Field size is 0 (min 1)
