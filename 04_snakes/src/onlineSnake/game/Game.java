@@ -2,7 +2,7 @@ package onlineSnake.game;
 
 import me.ippolitov.fit.snakes.SnakesProto;
 import onlineSnake.game.online.PingerHost;
-import onlineSnake.game.online.Receiver;
+import onlineSnake.game.online.Scaner;
 import onlineSnake.game.online.Sender;
 import onlineSnake.game.proto.Player;
 import onlineSnake.game.ui.Writer;
@@ -16,9 +16,11 @@ public class Game {
 
     public static void main(String[] args) throws IOException {
         Writer.Initialization();
-        Receiver.run();
         new Thread(new Sender()).start();
         new Thread(new PingerHost()).start();
+        while (true) {
+            Scaner.scan();
+        }
     }
 
 }

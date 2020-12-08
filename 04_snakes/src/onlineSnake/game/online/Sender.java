@@ -6,7 +6,9 @@ import onlineSnake.game.Game;
 import onlineSnake.game.proto.*;
 import onlineSnake.game.snake.Snake;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -43,9 +45,10 @@ public class Sender implements Runnable {
                 builder.setAnnouncement((SnakesProto.GameMessage.AnnouncementMsg) message);
                 builder.setSenderId(Game.player.getId());
                 builder.setMsgSeq(counter++);
-                byte[] data = builder.build().toByteArray();
+                byte[] data = builder.buildPartial().toByteArray();
                 try {
-                    DatagramPacket datagramPacket = new DatagramPacket(data, data.length, new InetSocketAddress("224.0.0.0", 8079));
+                    SnakesProto.GameMessage gameMessage = SnakesProto.GameMessage.parseFrom(data);
+                    DatagramPacket datagramPacket = new DatagramPacket(gameMessage.toByteArray(), gameMessage.toByteArray().length, new InetSocketAddress("224.0.0.0", 8079));
                     multicastSocket.send(datagramPacket);
                     System.out.print(".");
                 } catch (IOException e) {
