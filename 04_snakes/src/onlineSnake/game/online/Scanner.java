@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Scaner {
+public class Scanner {
     private static Map<String, DatagramPacket> messages = new HashMap<>();
     private static int counter = 0;
 
@@ -63,8 +63,7 @@ public class Scaner {
                 byte[] data2 = datagramPacket.getData();
                 System.arraycopy(data2, 0, data1, 0, datagramPacket.getLength());
                 SnakesProto.GameMessage gotMessage = SnakesProto.GameMessage.parseFrom(data1);
-                System.out.print(datagramPacket.getLength() + "\n");
-                System.out.print(datagramPacket.getAddress() +  " " + gotMessage.getAnnouncement().getCanJoin() + " " + gotMessage.getAnnouncement().getPlayers().getPlayersList().size() + "\n");
+                System.out.print("\n" + datagramPacket.getAddress() +  " " + gotMessage.getAnnouncement().getCanJoin() + " " + gotMessage.getAnnouncement().getPlayers().getPlayersList().size() + "\n");
             } catch (IOException e) {
                 e.printStackTrace();
             }

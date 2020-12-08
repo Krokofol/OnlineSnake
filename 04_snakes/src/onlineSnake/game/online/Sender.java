@@ -50,7 +50,6 @@ public class Sender implements Runnable {
                     SnakesProto.GameMessage gameMessage = SnakesProto.GameMessage.parseFrom(data);
                     DatagramPacket datagramPacket = new DatagramPacket(gameMessage.toByteArray(), gameMessage.toByteArray().length, new InetSocketAddress("224.0.0.0", 8079));
                     multicastSocket.send(datagramPacket);
-                    System.out.print(".");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

@@ -1,5 +1,6 @@
 package onlineSnake.game.ui;
 
+import onlineSnake.game.online.Scanner;
 import onlineSnake.game.snake.UserSnake;
 
 import java.awt.event.KeyEvent;
@@ -25,6 +26,9 @@ public class MyKeyListener implements KeyListener {
             case ('в') :
                 UserSnake.setUserDirection(4);
                 break;
+            case ('l') :
+            case ('д') :
+                Scanner.scan();
         }
     }
 
