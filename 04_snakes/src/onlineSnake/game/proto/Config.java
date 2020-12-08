@@ -46,6 +46,24 @@ public class Config {
         MyFrame.createFrame();
     }
 
+    public static void initializeFieldSize(int id) {
+        SnakesProto.GameMessage.AnnouncementMsg msg = onlineSnake.game.online.Scanner.getConfig(id);
+        width = msg.getConfig().getWidth();
+        height = msg.getConfig().getHeight();
+        System.out.print("Field was initialized successfully;\n");
+        gameConfig = SnakesProto.GameConfig.newBuilder()
+                .setWidth(width)
+                .setHeight(height)
+                .setFoodStatic(food_static)
+                .setFoodPerPlayer(food_per_player)
+                .setStateDelayMs(state_delay_ms)
+                .setDeadFoodProb(dead_food_prob)
+                .setPingDelayMs(ping_delay_ms)
+                .setNodeTimeoutMs(node_timeout_ms)
+                .build();
+        MyFrame.createFrame();
+    }
+
     public static SnakesProto.GameConfig getGameConfig() {
         return gameConfig;
     }

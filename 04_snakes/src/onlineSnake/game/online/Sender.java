@@ -19,7 +19,7 @@ public class Sender implements Runnable {
     static {
         try {
             multicastSocket = new MulticastSocket(8079);
-            NetworkInterface IFC = NetworkInterface.getByInetAddress(InetAddress.getLocalHost());
+            NetworkInterface IFC = NetworkInterface.getByName("224.0.0.0");
             multicastSocket.joinGroup(new InetSocketAddress("224.0.0.0", 8079), IFC);
         } catch (IOException e) {
             e.printStackTrace();
@@ -43,7 +43,7 @@ public class Sender implements Runnable {
                 break;
             case (6) :
                 builder.setAnnouncement((SnakesProto.GameMessage.AnnouncementMsg) message);
-                builder.setSenderId(Game.player.getId());
+                builder.setSenderId(Game.playerId);
                 builder.setMsgSeq(counter++);
                 byte[] data = builder.buildPartial().toByteArray();
                 try {
@@ -64,9 +64,9 @@ public class Sender implements Runnable {
                 builder.setRoleChange((SnakesProto.GameMessage.RoleChangeMsg) message);
                 break;
         }
-        builder.setSenderId(Game.player.getId());
+        builder.setSenderId(Game.playerId);
         for (Player player : Player.players) {
-            if (player.getId() == Game.player.getId()) continue;
+            if (player.getId() == Game.playerId) continue;
             builder.setMsgSeq(counter++);
             builder.setReceiverId(player.getId());
             packets.add(new Packet(builder.build(), new InetSocketAddress(player.getIp_address(), player.getPort())));
@@ -75,7 +75,7 @@ public class Sender implements Runnable {
 
     public void run() {
         try {
-            DatagramSocket datagramSocket = new DatagramSocket(Game.player.getPort());
+            DatagramSocket datagramSocket = new DatagramSocket(Player.getPlayer(Game.playerId).getPort());
             while (true) {
                 Packet packet = packets.poll();
                 if (packet == null) continue;

@@ -10,15 +10,13 @@ import onlineSnake.game.ui.Writer;
 import java.io.IOException;
 
 public class Game {
-    public static Player host;
-    public static Player player;
+    public static int playerId;
     public static SnakesProto.GameConfig gameConfig;
 
     public static void main(String[] args) throws IOException {
         Writer.Initialization();
         new Thread(new Sender()).start();
         new Thread(new PingerHost()).start();
-        Scanner.scan();
     }
 
 }

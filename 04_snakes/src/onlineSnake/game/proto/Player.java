@@ -6,6 +6,12 @@ import onlineSnake.game.Game;
 import java.util.ArrayList;
 
 public class Player {
+    public static Player getPlayer(int id) {
+        for (Player player : players) {
+            if (player.getId() == id) return player;
+        }
+        return null;
+    }
 
     public static ArrayList<Player> players = new ArrayList<Player>();
 

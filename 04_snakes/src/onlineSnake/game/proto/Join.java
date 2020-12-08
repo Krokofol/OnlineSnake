@@ -9,7 +9,7 @@ public class Join {
         return SnakesProto.GameMessage.JoinMsg.newBuilder()
                 .setPlayerType(SnakesProto.PlayerType.HUMAN)
                 .setOnlyView(false)
-                .setName(Game.player.getName())
+                .setName(Player.getPlayer(Game.playerId).getName())
                 .build();
     }
 }
