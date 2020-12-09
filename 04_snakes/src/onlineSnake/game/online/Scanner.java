@@ -5,6 +5,7 @@ import me.ippolitov.fit.snakes.SnakesProto;
 import java.io.IOException;
 import java.net.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,7 +26,6 @@ public class Scanner {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public static void scan() {
@@ -102,6 +102,10 @@ public class Scanner {
         }
         if (gotMessage == null) return null;
         return gotMessage.getAnnouncement();
+    }
+
+    public static String getHostIp(int id) {
+        return uniqMessages.get(id - 1).getAddress().getHostAddress();
     }
 
 }

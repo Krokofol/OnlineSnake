@@ -47,9 +47,11 @@ public class Config {
     }
 
     public static void initializeFieldSize(int id) {
+        System.out.print("Field initialization : \n");
         SnakesProto.GameMessage.AnnouncementMsg msg = onlineSnake.game.online.Scanner.getConfig(id);
         width = msg.getConfig().getWidth();
         height = msg.getConfig().getHeight();
+        System.out.print(".... x : " + width + "\n.... y : "  + height + "\n");
         System.out.print("Field was initialized successfully;\n");
         gameConfig = SnakesProto.GameConfig.newBuilder()
                 .setWidth(width)

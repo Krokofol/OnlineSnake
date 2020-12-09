@@ -82,7 +82,7 @@ public class Sender implements Runnable {
                 byte[] data = packet.message.toByteArray();
                 DatagramPacket datagramPacket = new DatagramPacket(data, 0, data.length, packet.address);
                 datagramSocket.send(datagramPacket);
-                System.out.print(",");
+                System.out.print("-> ");
             }
         } catch (IOException e) {
             e.printStackTrace();
